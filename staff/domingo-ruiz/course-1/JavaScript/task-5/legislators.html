@@ -4,13 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="main.css" type="text/css" />
+        <script src="jquery-3.5.1.min.js"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        
     </head>
     
     <body class="container">
-
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.1.0/mustache.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
         <img class=logo--size src="file:///Users/sunday/Downloads/pngegg.png" alt="fancylogo">
@@ -59,24 +60,20 @@
               </div>
             </div>
           </nav>
+
           
         <!--Table container-->
 
-            <h2>Senators</h2>
-            <p>First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S. Constitution. Each state is represented by two senators, regardless of population, who serve staggered six-year terms. The Senate has several exclusive powers not granted to the House, including consenting to treaties as a precondition to their ratification and consenting to or confirming appointments of Cabinet secretaries, federal judges, other federal executive officials, military officers, regulatory officials, ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the House.</p>
-
-      <div id="app" class="container">
-            <div class=flex--row id=checks>
+      <!-- <div  class="container">
+            <!-- <div class=flex--row id=checks>
               
               <p>Filter by party</p> 
               <input type="checkbox" value="R" id="republicans" v-model="checkedParty" >Republican</input>
               <input type="checkbox" value="D" id="democrats" v-model="checkedParty" >Democrat </input>
-              <input type="checkbox" value="ID" id="independents" v-model="checkedParty" >Independent</input> 
-              {{ checkedParty }} 
+              <input type="checkbox" value="ID" id="independents" v-model="checkedParty" >Independent</input>  -->
 
-              <div class=filter--state class=dropdown-menu class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span>{{ checkedStates }}</span>
-                <p class=text--margin>Filter by state: &nbsp; 
+              <!-- <div class=filter--state class=dropdown-menu class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
+                <!-- <p class=text--margin>Filter by state: &nbsp; 
                     <select name="filterState" id="stateDropDown" v-model="checkedState">
                       <option value="ALL">All States</option>
                       <option value="AR">Arkansas</option>
@@ -89,8 +86,8 @@
                       <option value="FL">Florida</option>
                       <option value="GA">Georgia</option>
                       <option value="ID">Idaho</option>
-                      <option value="HI">Hawaii</option>
-                      <option value="IL">Illinois</option>
+                      <option value="HI">Hawaii</option> -->
+                      <!-- <option value="IL">Illinois</option>
                       <option value="IN">Indiana</option>
                       <option value="IA">Iowa</option>
                       <option value="KS">Kansas</option>
@@ -112,8 +109,8 @@
                       <option value="NY">New York</option>
                       <option value="NC">North Carolina</option>
                       <option value="ND">North Dakota</option>
-                      <option value="OH">Ohio</option>
-                      <option value="OK">Oklahoma</option>
+                      <option value="OH">Ohio</option> -->
+                      <!-- <option value="OK">Oklahoma</option>
                       <option value="OR">Oregon</option>
                       <option value="PA">Pennsylvania</option>
                       <option value="RI">Rhode Island</option>
@@ -130,28 +127,28 @@
                       <option value="WY">Wyoming</option>
                   </select> &nbsp;</p>
               </div>     
-            </div>
-        <table class="table table-striped">
-          <tr>
-              <th>Senator</th>
-              <th>Party</th>
-              <th>State</th>
-              <th>Seniority</th>
-              <th>Votes with party</th>
-          </tr>
-            <tr v-for="key in filterArr">
-              <td>{{key.given_name}} {{key.family_name}} </td> 
-              <td>{{key.party}}</td>
-              <td>{{key.org_classification}}</td>
-            </tr>
-        </table>
-      </div>
+            </div> --> 
+  
+          <div class="legislators-info" >
+            <table  class="table table-striped">
+              <thead>
+                <th> SENATOR</th>
+                <th> PARTY AFFILIATION</th>
+                <th> CHAMBER</th>
+              </thead>
+            </table>
+          </div>
+        <footer><p class="navbar navbar-expand-lg navbar-light bg-light" id = margin--center>&copy; 2016 | All Rights Reserved</p></footer>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+        <script src="/Users/sunday/Desktop/ubiqum-bootcamp/staff/domingo-ruiz/course-1/JavaScript/task-5/main.js"></script> 
 
-          <footer><p class="navbar navbar-expand-lg navbar-light bg-light" id = margin--center>&copy; 2016 | All Rights Reserved</p></footer>
-          <script src="pro-congress-113-senate.js"></script> 
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
   </body>
 </html>

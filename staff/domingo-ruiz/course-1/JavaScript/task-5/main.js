@@ -278,3 +278,19 @@ var legislatorsNewyork = {
       "total_items": 141
     }
   }
+
+
+
+var legislators = legislatorsNewyork.results
+
+
+$.each(legislators, function (index, item) {
+    
+    var rows = '' 
+         + '<tr><td><b><a href={{openstates_url}}>{{name}}</a></b></td>' 
+         + '<td>{{party}}</td>'         
+         + '<td>{{current_role.org_classification}}</td></tr>' 
+
+
+    $('.table').append(Mustache.render(rows, item));
+});
