@@ -136,7 +136,7 @@ var app = new Vue(
       },
       computed :{
         //filters
-          filterFun: function(){
+          filterArr: function(){
             this.filteredByPartyArr= [...this.senateArr].filter(filter => this.checkedParty.includes(filter.party));
             this.filteredByStateArr= [...this.senateArr].filter(filter => this.checkedState.includes(filter.state));
             this.filteredTwice= [...this.filteredByPartyArr].filter(filter => this.checkedState.includes(filter.state));
