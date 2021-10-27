@@ -61,22 +61,23 @@
             </div>
           </nav>
 
-          
+          <!-- filter by party -->
         <!--Table container-->
 
       <!-- <div  class="container">
-            <!-- <div class=flex--row id=checks>
+            <div class=flex--row id=checks>
               
               <p>Filter by party</p> 
               <input type="checkbox" value="R" id="republicans" v-model="checkedParty" >Republican</input>
               <input type="checkbox" value="D" id="democrats" v-model="checkedParty" >Democrat </input>
               <input type="checkbox" value="ID" id="independents" v-model="checkedParty" >Independent</input>  -->
-
-              <!-- <div class=filter--state class=dropdown-menu class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
-                <!-- <p class=text--margin>Filter by state: &nbsp; 
+          <!-- filter by state -->
+  
+              <div class=filter--state class=dropdown-menu class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
+                <p class=text--margin>Filter by state: &nbsp; 
                     <select name="filterState" id="stateDropDown" v-model="checkedState">
                       <option value="ALL">All States</option>
-                      <option value="AR">Arkansas</option>
+                      <option value="Arkansas">Arkansas</option>
                       <option value="AZ">Arizona</option>
                       <option value="AL">Alabama</option>
                       <option value="CA">California</option>
@@ -86,8 +87,8 @@
                       <option value="FL">Florida</option>
                       <option value="GA">Georgia</option>
                       <option value="ID">Idaho</option>
-                      <option value="HI">Hawaii</option> -->
-                      <!-- <option value="IL">Illinois</option>
+                      <option value="HI">Hawaii</option> 
+                      <option value="IL">Illinois</option>
                       <option value="IN">Indiana</option>
                       <option value="IA">Iowa</option>
                       <option value="KS">Kansas</option>
@@ -109,8 +110,8 @@
                       <option value="NY">New York</option>
                       <option value="NC">North Carolina</option>
                       <option value="ND">North Dakota</option>
-                      <option value="OH">Ohio</option> -->
-                      <!-- <option value="OK">Oklahoma</option>
+                      <option value="OH">Ohio</option> 
+                      <option value="OK">Oklahoma</option>
                       <option value="OR">Oregon</option>
                       <option value="PA">Pennsylvania</option>
                       <option value="RI">Rhode Island</option>
@@ -127,10 +128,10 @@
                       <option value="WY">Wyoming</option>
                   </select> &nbsp;</p>
               </div>     
-            </div> --> 
+            </div> 
   
           <div class="legislators-info" >
-            <table  class="table table-striped">
+            <table  class="table table-striped" id='coolTable'>
               <thead>
                 <th> SENATOR</th>
                 <th> PARTY AFFILIATION</th>
@@ -149,6 +150,6 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
         <script src="/Users/sunday/Desktop/ubiqum-bootcamp/staff/domingo-ruiz/course-1/JavaScript/task-5/main.js"></script> 
-
+        <script src="/Users/sunday/Desktop/ubiqum-bootcamp/staff/domingo-ruiz/course-1/JavaScript/task-5/searchparams.js"></script>
   </body>
 </html>
