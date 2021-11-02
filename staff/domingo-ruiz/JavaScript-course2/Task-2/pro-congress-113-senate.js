@@ -5203,12 +5203,12 @@ buildTable(senatArr);
   "WY"]
 
     for(var i = 0; i < states.length; i++) {
-      var opt = states[i];
-      var el = document.createElement("option");
+      let opt = states[i];
+      let el = document.createElement("option");
       el.textContent = opt;
       el.value = opt;
       select.add(el);
-  }
+  } 
 
 //selecting checkboxes
 
@@ -5220,6 +5220,7 @@ function partyFilter(){
   let partyselected = [];
 
   for ( i=0; i < senatArr.length; i++) {
+    
     if ((document.getElementById("dem").checked && senatArr[i].party === "D") && (statesdrop === senatArr[i].state || statesdrop === states[0] || statesdrop === "Select an State")){
        partyselected.push(senatArr[i]);     
     }
@@ -5232,6 +5233,7 @@ function partyFilter(){
           if (((document.getElementById("dem").checked===false) && (document.getElementById("rep").checked===false) && (document.getElementById("ind").checked === false)) && (statesdrop === senatArr[i].state || statesdrop === states[0] || statesdrop === "Select an State")){
             partyselected.push(senatArr[i]);
           }
+    
     }
     console.log(partyselected)
     

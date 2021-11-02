@@ -70,13 +70,13 @@
               
               <p>Filter by party</p> 
               <input type="checkbox" value="R" id="republicans" v-model="checkedParty" >Republican</input>
-              <input type="checkbox" value="D" id="democrats" v-model="checkedParty" >Democrat </input>
+              <input type="checkbox" value="D" id="democrats" v-model="checkedParty" >Democrat</input>
               <input type="checkbox" value="ID" id="independents" v-model="checkedParty" >Independent</input> 
-              {{ checkedParty }} 
 
               <div class=filter--state class=dropdown-menu class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span>{{ checkedStates }}</span>
                 <p class=text--margin>Filter by state: &nbsp; 
+                  <!---make in dynamic wayn -->
                     <select name="filterState" id="stateDropDown" v-model="checkedState">
                       <option value="ALL">All States</option>
                       <option value="AR">Arkansas</option>
@@ -130,8 +130,11 @@
                       <option value="WY">Wyoming</option>
                   </select> &nbsp;</p>
               </div>     
+
             </div>
+            <div id="spinner"></div>
         <table class="table table-striped">
+
           <tr>
               <th>Senator</th>
               <th>Party</th>
@@ -139,6 +142,7 @@
               <th>Seniority</th>
               <th>Votes with party</th>
           </tr>
+
             <tr v-for="key in filterArr">
               <td>{{key.first_name}} {{key.middle_name}} {{key.last_name}} </td> 
               <td>{{key.party}}</td>
@@ -146,7 +150,10 @@
               <td>{{key.seniority}}</td>
               <td>{{key.votes_with_party_pct}}</td>
             </tr>
+
         </table>
+        <p v-if="filterArr.length == 0">You didn´t say the magic word</p>
+
       </div>
 
           <footer><p class="navbar navbar-expand-lg navbar-light bg-light" id = margin--center>&copy; 2016 | All Rights Reserved</p></footer>

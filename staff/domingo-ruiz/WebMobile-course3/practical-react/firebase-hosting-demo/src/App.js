@@ -59,7 +59,6 @@ const CourseList = ({ courses }) => (
   </div>
 );
 
-// no sé dónde va esto
 
 
 export default App;
