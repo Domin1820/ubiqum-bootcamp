@@ -140,13 +140,14 @@ h3 {
 }
 
 h4 {
-    color: #043c4c;
-    margin-left: 5px;
+    color: #813049;
+    margin-left: 10%;
+    margin-right: 50%;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     font-weight: 800;
     text-transform: uppercase;
-    font-size: 17px;
+    font-size: 10em;
     
 
 }

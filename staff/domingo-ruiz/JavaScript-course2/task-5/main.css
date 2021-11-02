@@ -62,3 +62,9 @@
 .margin--top{
     margin-top: 30%;
 }
+
+#coolTable {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}

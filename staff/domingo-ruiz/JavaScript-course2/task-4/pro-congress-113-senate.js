@@ -42,8 +42,6 @@ var app = new Vue(
       })
       }, 
       },
-      //Instead of a computed property, we could define the same function as a method if it doesn´t change. 
-      //A computed property will only re-evaluate when some of its reactive dependencies have changed
       computed :{
         //filters
           filterArr: function(){

@@ -41,9 +41,4 @@ document.getElementById('stateDropDown').addEventListener("change", () => {
 
 })
 }
-//   function searchparam (){
-//     let paramState = new URLSearchParams(window.location.search);
-//     return paramState.get('jurisdiction').toLowerCase();
-// }
 
-// console.log(searchparam('jurisdiction'));
