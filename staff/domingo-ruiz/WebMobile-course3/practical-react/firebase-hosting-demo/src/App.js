@@ -1,58 +1,35 @@
+
 import React, { useState, useEffect } from 'react';
 import './App.css'
-// import React from 'react';
-
-
-// const schedule = {
-//   "title": "CS Courses for 2018-2019",
-//   "courses": {
-//     "F101" : {
-//       "id" : "F101",
-//       "meets" : "MWF 11:00-11:50",
-//       "title" : "Computer Science: Concepts, Philosophy, and Connections"
-//     },
-//     "F110" : {
-//       "id" : "F110",
-//       "meets" : "MWF 10:00-10:50",
-//       "title" : "Intro Programming for non-majors"
-//     },
-//     "S313" : {
-//       "id" : "S313",
-//       "meets" : "TuTh 15:30-16:50",
-//       "title" : "Tangible Interaction Design and Learning"
-//     },
-//     "S314" : {
-//       "id" : "S314",
-//       "meets" : "TuTh 9:30-10:50",
-//       "title" : "Tech & Human Interaction"
-//     }
-//   }
-// };
 
 
 const Banner = props => (
   <h1>{props.title}</h1>
 )
 
-// const CourseList = ({ courses }) => (
-//   <div className="course-list">
-//   { Object.values(courses).map(course => <Course course={ course } />) }
-//   </div>
-// );
-
 const CourseList = ({ courses }) => {
   const [term, setTerm] = useState('Fall');
+  const [selected, setSelected] = useState([]);
   const termCourses = Object.values(courses).filter(course => term === getCourseTerm(course));
   
   return (
     <>
       <TermSelector term={term} setTerm={setTerm} />
       <div className="course-list">
-      { termCourses.map(course => <Course key={course.id} course={ course } />) }
+      { 
+        termCourses.map(course =>
+          <Course key={ course.id } course={ course }
+            selected={selected} setSelected={ setSelected } 
+          />) 
+      }
       </div>
-   </>
+    </>
   );
 };
+
+const toggle = (x, lst) => (
+  lst.includes(x) ? lst.filter(y => y !== x) : [x, ...lst]
+);
 
 const TermButton = ({term, setTerm, checked}) => (
   <>
@@ -85,15 +62,23 @@ const getCourseNumber = course => (
   course.id.slice(1, 4)
 );
 
-const Course = ({ course }) => (
-  <div className="card m-1 p-2">
-    <div className="card-body">
-      <div className="card-title">{ getCourseTerm(course) } CS { getCourseNumber(course) }</div>
-      <div className="card-text">{ course.title }</div>
+const Course = ({ course, selected, setSelected }) => {
+  const isSelected = selected.includes(course);
+  const style = {
+    backgroundColor: isSelected ? 'lightgreen' : 'white'
+  };
+  return (
+    <div className="card m-1 p-2" 
+      style={style}
+      onClick={() => setSelected(toggle(course, selected))}>
+      <div className="card-body">
+        <div className="card-title">{ getCourseTerm(course) } CS { getCourseNumber(course) }</div>
+        <div className="card-text">{ course.title }</div>
+        <div className="card-text">{ course.meets }</div>
+      </div>
     </div>
-  </div>
-);
-
+  );
+};
 
 const App = () => {
   const [schedule, setSchedule] = useState();
@@ -107,8 +92,7 @@ const App = () => {
       setSchedule(json);
     }
     fetchSchedule();
-  } 
-  );
+  }, [])
 
   if (!schedule) return <h1>Loading schedule...</h1>;
 
