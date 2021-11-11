@@ -1,15 +1,29 @@
 import React from 'react';
 import './App.css';
 import './components/home';
-import img1 from './assets/img/img1.jpg'
+import Title from './components/home';
+import "bootstrap/dist/css/bootstrap.css";
+import {NavBar, UpComing} from './components/home';
+import {BrowserRouter as Router,
+  // Switch,
+  // Route,
+  // Link
+} from "react-router-dom";
+import {Swap} from './components/switching'
 
 function App() {
   return (
-    <div className="App">
-      Northside Youth Soccer League
-      <img src={img1} alt="kids "/>
-    </div>
+    <Router>
+      <div>
+        <NavBar/>
+        <Swap/>
+      </div>
+    </Router>
+
   );
 }
 
+
+
 export default App;
+<Title className="w-100 p-3"/>
