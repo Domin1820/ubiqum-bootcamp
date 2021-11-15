@@ -5,17 +5,10 @@ import Image from "react-bootstrap/Image";
 import '../App.css';
 import {Container, Row } from 'react-bootstrap';
 import logo from '../assets/img/nysl_logo.png';
-import styled from 'styled-components';
 import { Link} from "react-router-dom";
 
 
 //top of the page. Used styled components
-
-const H1 = styled.h1({
-    marginTop: '20px',
-    fontSize: '2em',
-    textAlign: "left", 
-});
 
 
 
@@ -24,7 +17,7 @@ const Title = () => {
         return (
             <Container fluid >
                 <Row>
-                    <H1>Northside Youth Soccer Leage</H1>
+                    <h1>Northside Youth Soccer Leage</h1>
                     <Image  style={{resizeMode: 'cover'}} src={img1}  alt="kids" />
                 </Row>
             </Container>
@@ -43,8 +36,8 @@ const NavBar = () => {
                 <Link className="navbar-brand" to="/cont">Contact</Link>
                 <Link className="navbar-brand" to="/about">About</Link>
                 <Link className="navbar-brand" to="/">Rules and Policies</Link>
-                <Link className="navbar-brand" to="/gameinfo">Game Information</Link>
-                <Link className="navbar-brand" to="/game">Registration Form</Link>
+                <Link className="navbar-brand" to="/schedule">Game Information</Link>
+                <Link className="navbar-brand" to="/">Registration Form</Link>
             </div>
         </nav>
     )
@@ -52,16 +45,6 @@ const NavBar = () => {
 
 //upcoming events table with style cons. Used styled components
 
-const H2 = styled.h2({
-    fontSize: '1.8em',
-    borderBottom: "2px solid black",
-    textAlign: "center", 
-});
-
-const P = styled.p({
-    fontSize: "1.2em",
-    fontStyle: 'italic',
-})
  
 
 const UpComing = () => {
@@ -69,13 +52,13 @@ const UpComing = () => {
         
         <div class="container">
             
-            <H2> Upcoming Events </H2>
+            <h2> Upcoming Events </h2>
             <ul>
-                <P>August 4</P>
+                <p>August 4</p>
                 <ul>NYSL Fundraiser</ul>
-                <P>August 16</P>
+                <p>August 16</p>
                 <ul>Season Kick-off: Meet the Teams</ul>
-                <P>September 1</P>
+                <p>September 1</p>
                 <ul>First Game of the Season (Check Game Schedule for details)</ul>
             </ul>
         </div>

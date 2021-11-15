@@ -1,9 +1,8 @@
 import React from 'react';
 import './App.css';
 import './components/home';
-import Title from './components/home';
 import "bootstrap/dist/css/bootstrap.css";
-import {NavBar, UpComing} from './components/home';
+import {NavBar} from './components/home';
 import {BrowserRouter as Router,
   // Switch,
   // Route,
@@ -26,4 +25,3 @@ function App() {
 
 
 export default App;
-<Title className="w-100 p-3"/>

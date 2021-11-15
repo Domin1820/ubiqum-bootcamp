@@ -1,12 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
 
 
-const H2 = styled.h2({
-    fontSize: '1.8em',
-    borderBottom: "2px solid black",
-    textAlign: "center", 
-});
 
 const EmailLink = () =>{
     return(
@@ -17,7 +11,7 @@ const EmailLink = () =>{
 const ContactUs = () => {
     return (
         <div class="container">
-            <H2> Contact us </H2>
+            <h2> Contact us </h2>
             <ul>
                 <p>Please email us at {EmailLink}  </p>
                 <p>We will reply to your email as soon as we can.</p>
