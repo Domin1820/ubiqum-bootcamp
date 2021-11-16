@@ -6,13 +6,11 @@ import '../App.css';
 import {Container, Row } from 'react-bootstrap';
 import logo from '../assets/img/nysl_logo.png';
 import { Link} from "react-router-dom";
+import { LogOut, LogInButton } from './firebase'
+import {useUserState} from './firebase'
 
 
 //top of the page. Used styled components
-
-
-
-
 const Title = () => {
         return (
             <Container fluid >
@@ -24,29 +22,27 @@ const Title = () => {
         );
     }
 
+
 //navbar 
     
 const NavBar = () => {
+    const [user] = useUserState();
     return(
         
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <img alt='logo' class="logo" src={logo}></img>
             <div className="container-fluid d-flex justify-content-around nav-height">
-                <Link className="navbar-brand" to="/upcoming">Home</Link>
+                <Link className="navbar-brand" to="/">Home</Link>
                 <Link className="navbar-brand" to="/cont">Contact</Link>
-                <Link className="navbar-brand" to="/about">About</Link>
-                <Link className="navbar-brand" to="/">Rules and Policies</Link>
                 <Link className="navbar-brand" to="/schedule">Game Information</Link>
-                <Link className="navbar-brand" to="/">Registration Form</Link>
+                { user ? <LogOut /> : <LogInButton /> }
             </div>
         </nav>
     )
 }
 
 //upcoming events table with style cons. Used styled components
-
  
-
 const UpComing = () => {
     return (
         
@@ -64,6 +60,10 @@ const UpComing = () => {
         </div>
     )
 }
+
+
+
+
 
 
 export {NavBar, UpComing}
